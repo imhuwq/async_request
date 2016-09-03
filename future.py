@@ -20,7 +20,6 @@ class Future:
 
 
 class Task:
-    task_queue = []
 
     def __init__(self, coro):
         self.coro = coro
@@ -39,7 +38,6 @@ class Task:
     def coroutine(cls, fn):
         @wraps(fn)
         def wrapper(*args, **kwargs):
-            cls.task_queue.append(fn)
             return Task(fn(*args, **kwargs))
 
         return wrapper

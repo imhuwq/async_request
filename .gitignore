@@ -1,2 +1,4 @@
 env
 .idea
+te.py
+__pycache__
